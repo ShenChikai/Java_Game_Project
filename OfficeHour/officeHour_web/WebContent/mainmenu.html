@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSCI 201 Final Project</title>
+<link rel="stylesheet" href="mainmenu.css">
+<script>
+	function validateLogin() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", "Login?username=" + document.loginform.uname.value + 
+				"&password=" + document.loginform.psw.value, false);
+		xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhttp.send();
+		if(xhttp.responseText.trim().length>0) {
+			var res = xhttp.responseText.split("\n");
+			if(res[0] == "0") {
+				document.getElementById("loginUnameLabel").innerHTML  = res[1];
+				document.getElementById("loginPswLabel").innerHTML  = "";
+			}
+			else if(res[0] == "1") {
+				document.getElementById("loginPswLabel").innerHTML  = res[1];
+				document.getElementById("loginUnameLabel").innerHTML  = "";
+			}
+			else if(res[0] == "2") {
+				document.getElementById("loginUnameLabel").innerHTML  = "";
+				document.getElementById("loginPswLabel").innerHTML  = res[1];
+			}
+			return false;
+		}
+		return true;	
+	}
+
+	function validateSignUp() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", "SignUp?username=" + document.signupform.uname.value + 
+				"&password=" + document.signupform.psw.value, false);
+		xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhttp.send();
+		if(xhttp.responseText.trim().length>0) {
+			var res = xhttp.responseText.split("\n");
+			if(res[0] == "0") {
+				document.getElementById("signupUnameLabel").innerHTML  = res[1];
+				document.getElementById("signupPswLabel").innerHTML  = "";
+			}
+			else if(res[0] == "1") {
+				document.getElementById("signupPswLabel").innerHTML  = res[1];
+				document.getElementById("signupUnameLabel").innerHTML  = "";
+			}
+			else if(res[0] == "2") {
+				document.getElementById("signupUnameLabel").innerHTML  = "";
+				document.getElementById("signupPswLabel").innerHTML  = res[1];
+			}
+			return false;
+		}
+		return true;
+	}
+
+
+</script>
+</head>
+<body>
+	<div class=content>
+		<div class=header-info>
+		</div>
+		<div class=header-content>
+			<h1>Welcome to Office Hours!</h1>
+			<img src="office-hours.png" alt="officehoursimage"></img>
+		</div>
+		<div class=form>
+			<button class="mainmenu-button" onclick="document.getElementById('loginform').style.display='block'">Login</button>
+		</div>
+		<div class=form>
+			<button class="mainmenu-button" onclick="document.getElementById('signupform').style.display='block'">Sign Up</button>
+		</div>
+		<div class=form>
+			<button class="mainmenu-button" onclick="location.href = 'OfficeHour'">Continue As Guest</button>
+		</div>
+	</div>
+	
+	<div id="loginform" class="modal">
+	  <form name="loginform" class="modal-content" action="OfficeHour" method="post" onsubmit="return validateLogin()">
+		<div class="modal-title">
+			Login
+		</div>
+	    <div class="container">
+	      <label for="uname"><b>Username</b> <span style="color:red; font-size:14px;" id="loginUnameLabel"></span></label>
+	      <input type="text" placeholder="Enter Username" name="uname" required>
+	
+	      <label for="psw"><b>Password</b> <span style="color:red;font-size:14px;" id="loginPswLabel"></span></label>
+	      <input type="password" placeholder="Enter Password" name="psw" required>
+	      
+	      <div class="btn-group">
+		      <button class="login-button" type="submit">Login</button>
+	    	  <button class="cancelbtn" type="button" onclick="document.getElementById('loginform').style.display='none'">Cancel</button>
+	      </div>
+	    </div>
+	  </form>
+	</div>
+	
+	<div id="signupform" class="modal">
+	  <form name="signupform" class="modal-content" action="OfficeHour" method="post" onsubmit="return validateSignUp()">
+		<div class="modal-title">
+			Sign Up
+		</div>
+	    <div class="container">
+	      <label for="uname"><b>Username</b> <span style="color:red;font-size:14px;" id="signupUnameLabel"></span></label>
+	      <input type="text" placeholder="Enter Username" name="uname" required>
+	
+	      <label for="psw"><b>Password</b> <span style="color:red;font-size:14px;" id="signupPswLabel"></span></label>
+	      <input type="password" placeholder="Enter Password" name="psw" required>
+	      
+	      <div class="btn-group">
+		      <button class="login-button" type="submit">Register</button>
+	    	  <button class="cancelbtn" type="button" onclick="document.getElementById('signupform').style.display='none'">Cancel</button>
+	      </div>
+	    </div>
+	  </form>
+	</div>
+	
+	
+	
+</body>
+</html>

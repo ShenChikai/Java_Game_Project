@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+.btn-group button {
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.content {
+  width: 800px ;
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.header-content{
+	text-align: center;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.header-info{
+	text-align: right;
+	font-size: small;
+}
+
+.leaderboard{
+	border: 2px solid black;
+	border-radius: 25px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.leaderboard-header{
+	text-align: center;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-weight: bold;
+}
+
+.leaderboard-info{
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+.leaderboard-users{
+	float: left;
+}
+
+.leaderboard-scores{
+	float:right;
+	padding-right: 20px;
+}
+
+.playagain-button{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.playagain-button:hover {
+  background-color: #3e8e41;
+}
+
+.quit-button {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 16px;
+  border-radius: 15px;
+}
+.quit-button:hover{
+  background-color: #d2190b;
+}

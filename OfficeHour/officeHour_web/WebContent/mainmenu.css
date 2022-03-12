@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+body{
+	padding: 20px;
+}
+
+.btn-group button {
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+
+.cancelbtn {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 16px;
+}
+.cancelbtn:hover{
+  background-color: #d2190b;
+}
+
+.container {
+  padding: 16px;
+  font-size: 20px;
+}
+
+.content {
+  width: 800px ;
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.form{
+	width:auto;
+	text-align: center;
+}
+
+.header-content{
+	text-align: center;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.header-info{
+	text-align: right;
+	font-size: small;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.login-button{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #3e8e41;
+}
+
+.mainmenu-button{
+  width:50%;
+  background-color: #ADD8E6;
+  font-size: 20px;
+  padding: 14px 40px;
+  border-radius: 12px;
+  margin: 5px;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto 15% auto; /* 10% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 25%; /* Could be more or less, depending on screen size */
+  border-radius: 15px;
+}
+
+.modal-title {
+	background-color:#f1f1f1;
+	font-size: 28px;
+	text-align: center;
+	font-weight: bold;
+	padding: 20px;
+}
+
+#loginUnameLabel{
+	color: red;
+	font-size: 14px;
+}
